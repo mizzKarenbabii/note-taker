@@ -7,6 +7,21 @@ router.get('/notes', (req,res) => {
  })
 })
 
+router.post('/notes', (req,res) => {
+    var note = req.body
+    console.log(note)
+    store.write(note)
+    .then((notes) => {
+        return res.json(notes)
+    })
+   })
 
-
+   router.delete('/notes', (req,res) => {
+       var note = req.body 
+       console.log(note)
+       store.delete(noteID)
+       .then((notes) => {
+           return res.json(noteID)
+       })
+   })
 module.exports = router;

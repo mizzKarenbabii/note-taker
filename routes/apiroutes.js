@@ -19,9 +19,9 @@ router.post('/notes', (req,res) => {
    router.delete('/notes', (req,res) => {
        var note = req.body 
        console.log(note)
-       store.delete(noteID)
+       store.delete(note)
        .then((notes) => {
-           return res.json(noteID)
+           return res.json(notes)
        })
    })
 module.exports = router;
